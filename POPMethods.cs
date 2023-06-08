@@ -145,6 +145,7 @@ namespace ProjectsExamples
                     SupplierReference = "ABC001",//Supplier Reference
                     InvoiceCreditDate = DateTime.Today,//Invoice date
                     InvoiceCreditNo = "INV008",//Invoice number
+                    SecondReference = "2nd Ref",//Second Reference on Invoices
                     //OPTIONAL: add invoice value (*Variance will be added as an extra nominal line)
                     InvCredGoodsValue = 120,
                     InvCredTaxValue = 25,
