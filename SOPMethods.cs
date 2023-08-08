@@ -80,5 +80,24 @@ namespace ProjectsExamples
                 throw;
             }
         }
+
+        /// <summary>
+        /// Method for creating and linking up project transactions for SOP invoices. (Requires v221.0.18+)
+        /// </summary>
+        /// <param name="oInvoice">Sage.Accounting.SOP.SOPInvoiceCredit object</param>
+        /// <param name="PostedEntryID">Sage.Accounting.SalesLedger.PostedSalesAccountEntry ID</param>
+        public void PostProjectTransactionsForSOPInvoices(Sage.Accounting.SOP.SOPInvoiceCredit oInvoice, long PostedEntryID)
+        {
+            try
+            {
+                //Post Invoice method to create project transactions and link to nominals
+                SOPPostingCoordinator.PostSOPInvoices(oInvoice, PostedEntryID);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }
