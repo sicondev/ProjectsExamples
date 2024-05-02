@@ -151,7 +151,7 @@ namespace ProjectsExamples
                     InvCredTaxValue = 25,
                 };
 
-                //Loop Through Orders and lines available to invoice
+                //**Loop Through Orders and lines available to invoice**
 
                 POPInvoiceItem oInstrument = null;
                 oInstrument = new POPInvoiceItem()
@@ -159,10 +159,21 @@ namespace ProjectsExamples
                     OrderDocumentNo = "0000000066"//POP Order Number
                 };
 
-                
-                oInstrument.POPLineIDs.Add(Convert.ToInt64(515123)); //POP order line ID
-                oCoordinator.POPInvoiceItems.Add(oInstrument);
+                //Add order lines by ID
+                oInstrument.POPLineIDs.Add(Convert.ToInt64(515123)); //Example POP order line ID
 
+                //**Loop Through GRNs available to invoice**
+                
+                //Add GRN Items (not setting GRN Items will presume all GRN Items are ticked)
+                POPGRNItem oPOPGRNItem = null;
+                oPOPGRNItem = new POPGRNItem()
+                {
+                    SupplierGRN = "GRN001",//Example Supplier GRN 
+                };
+                oInstrument.POPGRNItems.Add(oPOPGRNItem);
+
+                //Add Invoice Instrument to list to post
+                oCoordinator.POPInvoiceItems.Add(oInstrument);
 
                 //Post
                 long URN = oCoordinator.PostInvoice();
@@ -170,7 +181,6 @@ namespace ProjectsExamples
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
