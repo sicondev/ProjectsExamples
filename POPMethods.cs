@@ -168,7 +168,7 @@ namespace ProjectsExamples
                 POPGRNItem oPOPGRNItem = null;
                 oPOPGRNItem = new POPGRNItem()
                 {
-                    SupplierGRN = "GRN001",//Example Supplier GRN 
+                    GRN = "0000004123",//Example of GRN 
                 };
                 oInstrument.POPGRNItems.Add(oPOPGRNItem);
 
